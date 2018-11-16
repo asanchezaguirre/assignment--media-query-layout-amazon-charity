@@ -1,0 +1,101 @@
+
+@import "./partial/mixins";
+@import "./partial/silent";
+@import "./partial/variables";
+
+
+.encabezado{
+	background-color: #DDDDDD;
+}
+
+
+.perfil{
+ 	@include width(100%);
+	border: 1px solid #E8E3E3;
+	margin-bottom: 7%;
+	
+	&_fotografia{
+	    padding: 3%;
+		@include width(95%);;
+	}
+	&_name{
+	    padding: 0 5%;
+	    margin-top: 0;
+		font-family: $font-family-mono;
+		color: $color-tropical-rain-forest;
+	}
+	&_text{
+		padding: 0 3% 7% 5%;
+		font-family: $font-family-roboto;
+	}
+}
+
+.encabezado{
+	@extend %grid-1; 
+	justify-content: center;
+	
+	&_title{
+		@include width(75%);
+	}
+	&_strapline{
+		@include width(60%);
+		margin-top: 30px;
+		margin-right: 17px;
+	}
+}
+.description{
+	&_title{
+		font-family: $font-family-mono;
+		color: $color-tropical-rain-forest;
+	}
+	&_text{
+		font-family: $font-family-roboto;
+	}
+}
+
+
+@media screen and (min-width: 768px){
+	
+	.cuerpo{
+		display: flex;
+	    flex-wrap: wrap; 
+		justify-content: space-around;
+	}
+
+	.perfil{
+		width: 46%;
+	}
+	.encabezado{
+		flex-direction: column;
+		
+		&_title{
+			width: 35%;
+			padding-left: 4%;
+
+		}
+		&_strapline{
+			width: 30%;	
+			align-self: flex-end;	
+		}
+	}
+}
+@media screen and (min-width: 1024px){
+
+	.perfil{
+		width: 25%;
+	}
+	.description{
+	&_title{
+		margin-top: 5%;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
